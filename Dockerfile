@@ -3,7 +3,7 @@ FROM node:18
 # This is the working directory 
 WORKDIR /app 
 
-COPY package.json ./app
+COPY package.json ./
 
 #This is the installation packages
 RUN npm install 
