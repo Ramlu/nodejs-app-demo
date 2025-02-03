@@ -1,7 +1,7 @@
 FROM node:18
 
 # This is the working directory 
-WORKDIR /usr/src/app 
+WORKDIR /app 
 
 COPY package*. ./
 
