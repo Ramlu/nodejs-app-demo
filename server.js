@@ -7,7 +7,7 @@ const { GraphQLObjectType, GraphQLSchema, GraphQLList, GraphQLID, GraphQLInt, Gr
 const { graphqlHTTP } = require("express-graphql")
 
 const UserType = new GraphQLObjectType({
-    name: "User",
+    name: "User", 
     fields: () => ({
         id: { type: GraphQLInt },
         firstName: { type: GraphQLString },
