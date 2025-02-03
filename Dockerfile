@@ -1,16 +1,21 @@
-FROM node:18
+FROM node:18-alpine as build-stage
 
-# This is the working directory 
 WORKDIR /app 
 
-COPY package.json ./
+COPY package*.json ./
 
-#This is the installation packages
-RUN npm install 
+RUN npm install --production
 
-#Copy the local files from local repo to container repo
-COPY . /app
+COPY . . 
+
+FROM node:18-alpine as production-stage 
+
+WORKDIR /app 
+
+COPY --from=build-stage /app /app 
 
 EXPOSE 5000 
 
 CMD ["npm","run","start"]
+
+
