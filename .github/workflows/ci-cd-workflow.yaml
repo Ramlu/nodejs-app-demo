@@ -28,7 +28,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: [self-hosted,ubuntu-latest]
+    runs-on: [self-hosted]
     steps:
       - name: Pull image from docker hub
         run: docker pull ${{secrets.DOCKER_USERNAME}}/node-app:1
